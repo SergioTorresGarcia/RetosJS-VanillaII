@@ -71,6 +71,5 @@ const numPrimo = (num) => {
             return true
         }
     }
-    
 }
 numPrimo(num) ? console.log(`${num} es un número primo`) : console.log(`${num} NO es un número primo`)
