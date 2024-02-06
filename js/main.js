@@ -1,4 +1,6 @@
 
+// RETO 1:
+
 // const calcArea = (figura) => {
 //     // let figura = prompt("A qué figura quieres calcular su área? círculo, cuadrado o triángulo)")
 //     const pi = 3.1416
@@ -22,32 +24,53 @@
 // console.log(calcArea(prompt("A qué figura quieres calcular su área? círculo, cuadrado o triángulo)")))
 
 
-// Crea una aplicación que nos genere una cantidad de números enteros aleatorios pasados
-// por el usuario (prompt). Crea un método donde pasamos como parámetros entre entre qué
-// números queremos que los genere, podemos pedirlas al usuario antes de generar los
-// números. Este método devolverá un número entero aleatorio. Muestra estos números por
-// consola.
+// RETO 2:
+
+// let numeros = parseInt(prompt("cuantos números quieres generar"))
+// let num1 = parseInt(prompt("Desde que número"))
+// let num2 = parseInt(prompt("Hasta que número"))
+
+// const randomNumbers = () => {
+//     let nums = []
+
+//     if (num2 - num1 > numeros) {
+//         let i = 0
+//         while (i < numeros) {
+
+//             nums.push(Math.floor((Math.random() * num2) + num1));
+//             i++
+//         }
+//     } else {
+//         console.log("no se puede - poco rango")
+//     }
+//     return nums
+// }
+
+// console.log(randomNumbers(num1, num2, numeros))
 
 
+// RETO 3:
 
-let numeros = parseInt(prompt("cuantos números quieres generar"))
-let num1 = parseInt(prompt("Desde que número"))
-let num2 = parseInt(prompt("Hasta que número"))
+// Crea una aplicación que nos pida un número por prompt y con un método se lo pasamos
+// por parámetro para que nos indique si es o no un número primo, debe devolver true si es
+// primo sino false. Un número primo es aquel que solo puede dividirse entre 1 y sí mismo. Por
+// ejemplo: 25 no es primo, ya que 25 es divisible entre 5, sin embargo, 17 si es primo.
 
-const randomNumbers = () => {
-    let nums = []
-    
-    if (num2 - num1 > numeros) {
-        let i = 0
-        while (i < numeros) {
 
-            nums.push(Math.floor((Math.random() * num2) + num1));
-            i++
-        }
-    } else {
-        console.log("no se puede - poco rango")
+let num = prompt("Dime un número positivo y comprobaré si es un número primo")
+
+const numPrimo = (num) => {
+
+    if (num < 2) {
+        return false
     }
-    return nums
+    for (i = 2; i < num; i++) {
+        if (num % i === 0) {
+            return false
+        } else {
+            return true
+        }
+    }
+    
 }
-
-console.log(randomNumbers(num1, num2, numeros))
+numPrimo(num) ? console.log(`${num} es un número primo`) : console.log(`${num} NO es un número primo`)
