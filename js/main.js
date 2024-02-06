@@ -70,19 +70,35 @@
 
 // RETO 4:
 
-// Crea una aplicación que nos calcule el factorial de un número pedido por prompt, lo
-// realizará mediante un método al que le pasamos el número como parámetro. Para calcular
-// el factorial, se multiplica los números anteriores hasta llegar a uno. Por ejemplo, si
-// introducimos un 5, realizará esta operación 5*4*3*2*1=120.
+// let num = prompt("A qué número quieres calcular su factorial?")
+// let total = num
+// const factorial = (num) => {
+//     let i=1
+//     while (i<num) {
+//         total *= (num-i)
+//         i++
+//     }
+//     return `${num}! es ${total}`
+// }
+// console.log(factorial(num))
 
-let num = prompt("A qué número quieres calcular su factorial?")
-let total = num
-const factorial = (num) => {
-    let i=1
-    while (i<num) {
-        total *= (num-i)
-        i++
+
+// RETO 5:
+
+let num = parseInt(prompt("Qué número quieres convertir a binario?"))
+
+const numBinario = []
+const convBinario = (num) => {
+
+    while (num >= 1) {
+        if (num % 2 == 0) {
+            numBinario.unshift('0')
+        } else {
+            numBinario.unshift('1')
+            num = num - 1
+        }
+        num = num / 2
     }
-    return `${num}! es ${total}`
+    return numBinario
 }
-console.log(factorial(num))
+console.log(convBinario(num).join(""))
