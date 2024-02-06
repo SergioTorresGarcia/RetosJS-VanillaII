@@ -51,25 +51,38 @@
 
 // RETO 3:
 
-// Crea una aplicación que nos pida un número por prompt y con un método se lo pasamos
-// por parámetro para que nos indique si es o no un número primo, debe devolver true si es
-// primo sino false. Un número primo es aquel que solo puede dividirse entre 1 y sí mismo. Por
-// ejemplo: 25 no es primo, ya que 25 es divisible entre 5, sin embargo, 17 si es primo.
+// let num = prompt("Dime un número positivo y comprobaré si es un número primo")
+// const numPrimo = (num) => {
+
+//     if (num < 2) {
+//         return false
+//     }
+//     for (i = 2; i < num; i++) {
+//         if (num % i === 0) {
+//             return false
+//         } else {
+//             return true
+//         }
+//     }
+// }
+// numPrimo(num) ? console.log(`${num} es un número primo`) : console.log(`${num} NO es un número primo`)
 
 
-let num = prompt("Dime un número positivo y comprobaré si es un número primo")
+// RETO 4:
 
-const numPrimo = (num) => {
+// Crea una aplicación que nos calcule el factorial de un número pedido por prompt, lo
+// realizará mediante un método al que le pasamos el número como parámetro. Para calcular
+// el factorial, se multiplica los números anteriores hasta llegar a uno. Por ejemplo, si
+// introducimos un 5, realizará esta operación 5*4*3*2*1=120.
 
-    if (num < 2) {
-        return false
+let num = prompt("A qué número quieres calcular su factorial?")
+let total = num
+const factorial = (num) => {
+    let i=1
+    while (i<num) {
+        total *= (num-i)
+        i++
     }
-    for (i = 2; i < num; i++) {
-        if (num % i === 0) {
-            return false
-        } else {
-            return true
-        }
-    }
+    return `${num}! es ${total}`
 }
-numPrimo(num) ? console.log(`${num} es un número primo`) : console.log(`${num} NO es un número primo`)
+console.log(factorial(num))
