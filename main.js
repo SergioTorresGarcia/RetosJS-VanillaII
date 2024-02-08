@@ -119,8 +119,6 @@
 
 let euros = parseFloat(prompt("¿Qué cantidad de euros quieres cambiar?"))
 let currencyTo = prompt("¿A qué moneda? dólar(d), yen (y) o libra (l)")
-console.log(euros, currencyTo)
-
 
 const CurrencyConverter = (euros, currencyTo) => {
     switch (currencyTo) {
@@ -137,4 +135,9 @@ const CurrencyConverter = (euros, currencyTo) => {
             console.log("data is not correct")
     }
 }
-console.log(CurrencyConverter(euros, currencyTo))
+
+console.log("Rates for 8/02/2024: 1$ = 0.93€ / 1¥ = 0.0062€ / 1£ = 1.17€")
+console.log("")
+
+console.log(`${euros}€ = ${CurrencyConverter(euros, currencyTo)}`)
+
