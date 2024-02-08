@@ -117,27 +117,47 @@
 
 // RETO 7:
 
-let euros = parseFloat(prompt("¿Qué cantidad de euros quieres cambiar?"))
-let currencyTo = prompt("¿A qué moneda? dólar(d), yen (y) o libra (l)")
+// let euros = parseFloat(prompt("¿Qué cantidad de euros quieres cambiar?"))
+// let currencyTo = prompt("¿A qué moneda? dólar(d), yen (y) o libra (l)")
 
-const CurrencyConverter = (euros, currencyTo) => {
-    switch (currencyTo) {
-        case "d":
-            return "$" + (euros / 0.93).toFixed(2)
-            break;
-        case "y":
-            return (euros / 0.0062).toFixed(1) + "¥"
-            break;
-        case "l":
-            return "£" + (euros / 1.17).toFixed(2)
-            break;
-        default:
-            console.log("data is not correct")
+// const CurrencyConverter = (euros, currencyTo) => {
+//     switch (currencyTo) {
+//         case "d":
+//             return "$" + (euros / 0.93).toFixed(2)
+//             break;
+//         case "y":
+//             return (euros / 0.0062).toFixed(1) + "¥"
+//             break;
+//         case "l":
+//             return "£" + (euros / 1.17).toFixed(2)
+//             break;
+//         default:
+//             console.log("data is not correct")
+//     }
+// }
+
+// console.log("Rates for 8/02/2024: 1$ = 0.93€ / 1¥ = 0.0062€ / 1£ = 1.17€")
+// console.log("")
+
+// console.log(`${euros}€ = ${CurrencyConverter(euros, currencyTo)}`)
+
+
+// RETO 8:
+
+let numArray = []
+
+const Rellenar = () => {
+    while (numArray.length < 10) {
+    
+        numArray.push(parseInt(prompt("Dime un número")))
     }
 }
+Rellenar()
 
-console.log("Rates for 8/02/2024: 1$ = 0.93€ / 1¥ = 0.0062€ / 1£ = 1.17€")
-console.log("")
+const Mostrar = () => {
+    numArray.map( el =>
+        console.log(`Index: ${numArray.indexOf(el)} | Número: ${el}`)
 
-console.log(`${euros}€ = ${CurrencyConverter(euros, currencyTo)}`)
-
+    )
+}
+Mostrar()
