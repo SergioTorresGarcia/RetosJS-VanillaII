@@ -106,11 +106,35 @@
 
 // RETO 6:
 
-let num = prompt("Escribe un número mayor que 0, y comprobamos cuantas cifras tiene?").trim()
+// let num = prompt("Escribe un número mayor que 0, y comprobamos cuantas cifras tiene?").trim()
 
- if(!isNaN(num) && (num > 0) && num % parseInt(num) == 0){
-    console.log(num.length + " cifras")
- } else {
-    console.log("No es un número entero positivo")
- }
+//  if(!isNaN(num) && (num > 0) && num % parseInt(num) == 0){
+//     console.log(num.length + " cifras")
+//  } else {
+//     console.log("No es un número entero positivo")
+//  }
 
+
+// RETO 7:
+
+let euros = parseFloat(prompt("¿Qué cantidad de euros quieres cambiar?"))
+let currencyTo = prompt("¿A qué moneda? dólar(d), yen (y) o libra (l)")
+console.log(euros, currencyTo)
+
+
+const CurrencyConverter = (euros, currencyTo) => {
+    switch (currencyTo) {
+        case "d":
+            return "$" + (euros / 0.93).toFixed(2)
+            break;
+        case "y":
+            return (euros / 0.0062).toFixed(1) + "¥"
+            break;
+        case "l":
+            return "£" + (euros / 1.17).toFixed(2)
+            break;
+        default:
+            console.log("data is not correct")
+    }
+}
+console.log(CurrencyConverter(euros, currencyTo))
