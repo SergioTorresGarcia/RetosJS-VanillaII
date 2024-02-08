@@ -85,20 +85,32 @@
 
 // RETO 5:
 
-let num = parseInt(prompt("Qué número quieres convertir a binario?"))
+// let num = parseInt(prompt("Qué número quieres convertir a binario?"))
 
-const numBinario = []
-const convBinario = (num) => {
+// const numBinario = []
+// const convBinario = (num) => {
 
-    while (num >= 1) {
-        if (num % 2 == 0) {
-            numBinario.unshift('0')
-        } else {
-            numBinario.unshift('1')
-            num = num - 1
-        }
-        num = num / 2
-    }
-    return numBinario
-}
-console.log(convBinario(num).join(""))
+//     while (num >= 1) {
+//         if (num % 2 == 0) {
+//             numBinario.unshift('0')
+//         } else {
+//             numBinario.unshift('1')
+//             num = num - 1
+//         }
+//         num = num / 2
+//     }
+//     return numBinario
+// }
+// console.log(convBinario(num).join(""))
+
+
+// RETO 6:
+
+let num = prompt("Escribe un número mayor que 0, y comprobamos cuantas cifras tiene?").trim()
+
+ if(!isNaN(num) && (num > 0) && num % parseInt(num) == 0){
+    console.log(num.length + " cifras")
+ } else {
+    console.log("No es un número entero positivo")
+ }
+
