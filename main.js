@@ -198,9 +198,9 @@
 let x = parseInt(prompt("Dime el largo del array"))
 let num1 = parseInt(prompt("Desde qué número"))
 let num2 = parseInt(prompt("Hasta qué número"))
-// let x = parseInt(5)
-// let num1 = parseInt(1)
-// let num2 = parseInt(100)
+            // let x = parseInt(5)
+            // let num1 = parseInt(1)
+            // let num2 = parseInt(100)
 
 let arr = []
 
@@ -226,10 +226,16 @@ while (arr.length < x) {
     }
 
     if (isPrimo(numRandom) == true) {
-        arr.push(numRandom)
+        arr.push(parseInt(numRandom))
     }
     // console.log("Random num: "+numRandom, "| Array length: "+ arr.length)
 }
 
-console.log(arr)
+console.log(`Array of ${x} random prime numbers between ${num1} and ${num2}: ${arr}`)
+arr.sort();
+
+console.log(`The biggest number from the array is: [${arr.slice(-1)}]`)
+
+
+
 
