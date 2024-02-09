@@ -195,47 +195,75 @@
 
 // RETO 10:
 
-let x = parseInt(prompt("Dime el largo del array"))
+// let x = parseInt(prompt("Dime el largo del array"))
+// let num1 = parseInt(prompt("Desde qué número"))
+// let num2 = parseInt(prompt("Hasta qué número"))
+//             // let x = parseInt(5)
+//             // let num1 = parseInt(1)
+//             // let num2 = parseInt(100)
+
+// let arr = []
+
+
+// const isPrimo = (num) => {
+
+//     for (i = 2; i < num; i++) {
+//         return (num % i !== 0) ? true : false
+//     }
+
+// }
+
+// while (arr.length < x) {
+//     let numRandom = Math.floor(Math.random() * (num2 - num1) + num1)
+
+//     const isPrimo = (num) => {
+//         for (i = 2; i < num; i++) {
+//             if (num % i == 0) {
+//                 return false;
+//             }
+//         }
+//         return true;
+//     }
+
+//     if (isPrimo(numRandom) == true) {
+//         arr.push(parseInt(numRandom))
+//     }
+//     // console.log("Random num: "+numRandom, "| Array length: "+ arr.length)
+// }
+
+// console.log(`Array of ${x} random prime numbers between ${num1} and ${num2}: ${arr}`)
+// arr.sort();
+
+// console.log(`The biggest number from the array is: [${arr.slice(-1)}]`)
+
+
+// RETO 11:
+
+let x = parseInt(prompt("Dime el largo de los arrays"))
 let num1 = parseInt(prompt("Desde qué número"))
 let num2 = parseInt(prompt("Hasta qué número"))
-            // let x = parseInt(5)
-            // let num1 = parseInt(1)
-            // let num2 = parseInt(100)
+        // let x = parseInt(5)
+        // let num1 = parseInt(1)
+        // let num2 = parseInt(100)
 
-let arr = []
+let arr1 = []
+let arr2 = []
+let totalArr =[]
 
-
-const isPrimo = (num) => {
-
-    for (i = 2; i < num; i++) {
-        return (num % i !== 0) ? true : false
-    }
-
+for (let i = 0; i < x; i++) {
+    let numRandom1 = Math.floor(Math.random() * (num2 - num1) + num1)
+    let numRandom2 = Math.floor(Math.random() * (num2 - num1) + num1)
+    arr1.push(parseInt(numRandom1))
+    arr2.push(parseInt(numRandom2))
 }
 
-while (arr.length < x) {
-    let numRandom = Math.floor(Math.random() * (num2 - num1) + num1)
+const MultiplyArray = arr1.map((_, index) => {
+    const arrId = arr2[index];
+    totalArr.push(arr1[index] * arrId)
+});
 
-    const isPrimo = (num) => {
-        for (i = 2; i < num; i++) {
-            if (num % i == 0) {
-                return false;
-            }
-        }
-        return true;
-    }
-
-    if (isPrimo(numRandom) == true) {
-        arr.push(parseInt(numRandom))
-    }
-    // console.log("Random num: "+numRandom, "| Array length: "+ arr.length)
-}
-
-console.log(`Array of ${x} random prime numbers between ${num1} and ${num2}: ${arr}`)
-arr.sort();
-
-console.log(`The biggest number from the array is: [${arr.slice(-1)}]`)
-
-
+console.log(`Array number 1: ${arr1}`)
+console.log(`Array number 1: ${arr2}`)
+console.log(`Result of multiplying both arrays by index: ${totalArr}`)
 
 
