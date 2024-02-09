@@ -21,7 +21,7 @@
 //             return "datos incorrectos"
 //     }
 // }
-// console.log(calcArea(prompt("A qué figura quieres calcular su área? círculo, cuadrado o triángulo)")))
+// console.log(calcArea(prompt("A qué figura quieres calcular su área? circulo, cuadrado o triangulo)")))
 
 
 // RETO 2:
@@ -32,16 +32,10 @@
 
 // const randomNumbers = () => {
 //     let nums = []
-
-//     if (num2 - num1 > numeros) {
-//         let i = 0
-//         while (i < numeros) {
-
-//             nums.push(Math.floor((Math.random() * num2) + num1));
-//             i++
-//         }
-//     } else {
-//         console.log("no se puede - poco rango")
+//     let i = 0
+//     while (i < numeros) {
+//         nums.push(Math.floor((Math.random() * (num2-num1)) + num1).toFixed(2));
+//         i++
 //     }
 //     return nums
 // }
@@ -57,8 +51,8 @@
 //     if (num < 2) {
 //         return false
 //     }
-//     for (i = 2; i < num; i++) {
-//         if (num % i === 0) {
+//     for (i = 2; i <= num; i++) {
+//         if (num % i === 0 && i !== num) {
 //             return false
 //         } else {
 //             return true
@@ -165,33 +159,77 @@
 
 // RETO 9:
 
-let cantidad = parseInt(prompt("Dime cuántos números quieres"))
-let num1 = parseInt(prompt("Desde qué número"))
-let num2 = parseInt(prompt("Hasta qué número"))
-let num3 = num2 - num1
-let numArray = []
+// let cantidad = parseInt(prompt("Dime cuántos números quieres"))
+// let num1 = parseInt(prompt("Desde qué número"))
+// let num2 = parseInt(prompt("Hasta qué número"))
+// let num3 = num2 - num1
+// let numArray = []
 
 
-// const Rellenar09 = () => { //rellena con números del 0 al 9
+// rellena con números del 0 al 9
+// const Rellenar09 = () => { 
 //     while (numArray.length < cantidad) {
 //         numArray.push(Math.floor(Math.random() * 10))
 //     }
 // }
 // Rellenar09()
 
-const Rellenar = () => { //rellena con números del num1 al num2
-    while (numArray.length < cantidad) {
-        numArray.push(Math.floor(Math.random() * num3 + num1))
-    }
-}
-Rellenar()
+// rellena con números del num1 al num2
+// const Rellenar = () => {
+//     while (numArray.length < cantidad) {
+//         numArray.push(Math.floor(Math.random() * num3 + num1))
+//     }
+// }
+// Rellenar()
 
-const Mostrar = () => {
-    let total = 0
-    numArray.map(el => {
-        console.log(`Número (posición ${numArray.indexOf(el) + 1}): ${el}`)
-        total += el
-    })
-    console.log(`La suma de todos los números es: ${total}`)
+// const Mostrar = () => {
+//     let total = 0
+//     numArray.map(el => {
+//         console.log(`Número (posición ${numArray.indexOf(el) + 1}): ${el}`)
+//         total += el
+//     })
+//     console.log(`La suma de todos los números es: ${total}`)
+// }
+// Mostrar()
+
+
+// RETO 10:
+
+let x = parseInt(prompt("Dime el largo del array"))
+let num1 = parseInt(prompt("Desde qué número"))
+let num2 = parseInt(prompt("Hasta qué número"))
+// let x = parseInt(5)
+// let num1 = parseInt(1)
+// let num2 = parseInt(100)
+
+let arr = []
+
+
+const isPrimo = (num) => {
+
+    for (i = 2; i < num; i++) {
+        return (num % i !== 0) ? true : false
+    }
+
 }
-Mostrar()
+
+while (arr.length < x) {
+    let numRandom = Math.floor(Math.random() * (num2 - num1) + num1)
+
+    const isPrimo = (num) => {
+        for (i = 2; i < num; i++) {
+            if (num % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    if (isPrimo(numRandom) == true) {
+        arr.push(numRandom)
+    }
+    // console.log("Random num: "+numRandom, "| Array length: "+ arr.length)
+}
+
+console.log(arr)
+
