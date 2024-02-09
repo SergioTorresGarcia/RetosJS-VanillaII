@@ -144,20 +144,54 @@
 
 // RETO 8:
 
+// let numArray = []
+
+// const Rellenar = () => {
+//     while (numArray.length < 10) {
+
+//         numArray.push(parseInt(prompt("Dime un número")))
+//     }
+// }
+// Rellenar()
+
+// const Mostrar = () => {
+//     numArray.map( el =>
+//         console.log(`Index: ${numArray.indexOf(el)} | Número: ${el}`)
+
+//     )
+// }
+// Mostrar()
+
+
+// RETO 9:
+
+let cantidad = parseInt(prompt("Dime cuántos números quieres"))
+let num1 = parseInt(prompt("Desde qué número"))
+let num2 = parseInt(prompt("Hasta qué número"))
+let num3 = num2 - num1
 let numArray = []
 
-const Rellenar = () => {
-    while (numArray.length < 10) {
-    
-        numArray.push(parseInt(prompt("Dime un número")))
+
+// const Rellenar09 = () => { //rellena con números del 0 al 9
+//     while (numArray.length < cantidad) {
+//         numArray.push(Math.floor(Math.random() * 10))
+//     }
+// }
+// Rellenar09()
+
+const Rellenar = () => { //rellena con números del num1 al num2
+    while (numArray.length < cantidad) {
+        numArray.push(Math.floor(Math.random() * num3 + num1))
     }
 }
 Rellenar()
 
 const Mostrar = () => {
-    numArray.map( el =>
-        console.log(`Index: ${numArray.indexOf(el)} | Número: ${el}`)
-
-    )
+    let total = 0
+    numArray.map(el => {
+        console.log(`Número (posición ${numArray.indexOf(el) + 1}): ${el}`)
+        total += el
+    })
+    console.log(`La suma de todos los números es: ${total}`)
 }
 Mostrar()
