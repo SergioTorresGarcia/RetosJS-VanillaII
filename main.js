@@ -198,20 +198,11 @@
 // let x = parseInt(prompt("Dime el largo del array"))
 // let num1 = parseInt(prompt("Desde qué número"))
 // let num2 = parseInt(prompt("Hasta qué número"))
-//             // let x = parseInt(5)
-//             // let num1 = parseInt(1)
-//             // let num2 = parseInt(100)
+//             let x = parseInt(5)
+//             let num1 = parseInt(1)
+//             let num2 = parseInt(100)
 
 // let arr = []
-
-
-// const isPrimo = (num) => {
-
-//     for (i = 2; i < num; i++) {
-//         return (num % i !== 0) ? true : false
-//     }
-
-// }
 
 // while (arr.length < x) {
 //     let numRandom = Math.floor(Math.random() * (num2 - num1) + num1)
@@ -269,18 +260,17 @@
 
 // RETO 12:
 
-
-let x = parseInt(prompt("Dime el largo del array"))
-let z = parseInt(prompt("Escoge un número del 0 al 10").trim())
+let x = 5 //parseInt(prompt("Dime el largo del array"))
+let z = 8 //parseInt(prompt("Escoge un número del 0 al 10").trim())
 let arrResult = []
 
 while (arrResult.length < x) {
-    for (let i = 0; i < x; i++) {
-        let numRandom = Math.floor(Math.random() * 299 + 1)
 
-        if (z == numRandom.toString().slice(-1)) {
-            arrResult.push(parseInt(numRandom))
-        }
+    let numRandom = Math.floor(Math.random() * 299 + 1)
+
+    if (z == numRandom.toString().slice(-1)) {
+        arrResult.push(parseInt(numRandom))
     }
+
 }
 console.log(arrResult)
